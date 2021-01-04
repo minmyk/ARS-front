@@ -1,0 +1,57 @@
+  <div id="user-form" class="authorize">
+      <div class="col-md-4 offset-md-4 mt-5">
+        <div class="contact">
+           <h3>Train your model!</h3>
+            <div class="container">
+              <div class="row justify-content-sm-center">
+                  <ul>
+                    <li *ngFor="let file of files">
+                        <mat-progress-bar></mat-progress-bar>
+                        <span id="file-label">
+                        </span>
+                    </li>
+                  </ul>
+                  <button class="send-btn" (click)="onClick()">
+                      Upload *.csv
+                  </button>
+                      <input type="file" #fileUpload id="fileUpload" name="fileUpload" accept=".csv" style="display:none;" />
+                    <button class="send-btn" [class.spinner]="training" [disabled]="training" (click)="beginTraining()">{{trainingButton}}</button>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                    <input class="contactus" placeholder="API uid" type="text" name="api-uid" value="API uid: {{userFromApi.apiUid}}" readonly>
+                </div>
+                <div class="col-sm-12">
+                    <input class="contactus" placeholder="API key" type="text" name="api-key" value="API key: {{userFromApi.apiKey}}" readonly>
+                </div>
+                <div class="col-sm-12">
+                  <h4> Train metrics </h4>
+                </div>
+                <div class="col-sm-12">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">MAP@5</th>
+                            <th scope="col">MAP@10</th>
+                            <th scope="col">Recall@100</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>{{Map5}}</td>
+                            <td>{{Map10}}</td>
+                            <td>{{Recall100}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                   </div>
+              </div>
+               <div class="row justify-content-center">
+                    <button class="send-btn" (click)="goToLink()">Download model</button>
+               </div>
+            </div>
+        </div>
+      </div>
+  </div>

@@ -1,0 +1,47 @@
+<div id="login" class="col-md-4 offset-md-4 mt-5">
+      <div class="card">
+        <h4 class="card-header">Log in</h4>
+        <div class="card-body">
+          <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+           <div class="form-group">
+                <label for="loginUsername">Username</label>
+                <input type="text"
+                       name="login"
+                       ngModel
+                       required
+                       #login="ngModel"
+                       class="form-control"
+                       id="loginUsername"
+                       placeholder="Enter username">
+            </div>
+           <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <input type="password"
+                       name="password"
+                       ngModel
+                       required
+                       #password="ngModel"
+                       class="form-control"
+                       id="loginPassword"
+                       placeholder="Enter password">
+              </div>
+                <div class="row">
+                  <div class="col-sm">
+                    <button type="submit"
+                      [disabled]="f.invalid"
+                      class="btn-primary">
+                      <a>Login</a>
+                      <i class="fas fa-sign-in-alt"></i>
+                    </button>
+                    </div>
+                  <div class="col-sm align-self-end">
+                      <a class="nav-item nav-link" routerLink="/registration">Need an account?</a>
+                  </div>
+                </div>
+            <ff-alerts></ff-alerts>
+        </form>
+            <div class="gap-500"></div>
+        </div>
+    </div>
+</div>
+

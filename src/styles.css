@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+  .circle-link {
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    margin: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: 50ms ease-out;
+  }
+
+  .circle-link:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+  .ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
